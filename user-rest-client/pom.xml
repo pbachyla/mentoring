@@ -18,6 +18,17 @@
             <artifactId>user-model</artifactId>
             <version>${user-service.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.epam.mentoring</groupId>
+            <artifactId>conf</artifactId>
+            <version>${user-service.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${apache.http.version}</version>
+        </dependency>
+
     </dependencies>
 
 </project>

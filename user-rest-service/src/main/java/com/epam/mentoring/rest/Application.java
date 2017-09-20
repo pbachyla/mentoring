@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 
 import java.util.Arrays;
 
-@SpringBootApplication(scanBasePackages = {"com.epam.mentoring"}, scanBasePackageClasses = {com.epam.mentoring.config.Config.class})
+@SpringBootApplication(scanBasePackages = {"com.epam.mentoring", "com.epam.mentoring.rest.client"})
 public class Application {
 
     public static void main(String[] args) {

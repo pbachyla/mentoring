@@ -31,6 +31,7 @@
         <h2.database.version>1.4.196</h2.database.version>
         <user-service.version>1.0-SNAPSHOT</user-service.version>
         <hibernate.version>5.2.11.Final</hibernate.version>
+        <apache.http.version>4.5.3</apache.http.version>
     </properties>
 
     <build>

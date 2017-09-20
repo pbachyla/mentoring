@@ -26,6 +26,11 @@
             <artifactId>conf</artifactId>
             <version>${user-service.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.epam.mentoring</groupId>
+            <artifactId>users-client</artifactId>
+            <version>${user-service.version}</version>
+        </dependency>
     </dependencies>
 
 </project>

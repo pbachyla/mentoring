@@ -15,6 +15,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Transient;
 
 @Entity
 @SequenceGenerator(name = "userIdGenerator", sequenceName = "userIdGenerator")
@@ -25,7 +26,7 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "userIdGenerator")
     @Column(name = "user_id")
-    private Long id;
+    private Long id; // TODO: 9/21/2017 UUID?
 
     @Column(name = "user_email", unique = true, nullable = false)
     private String email;
@@ -43,6 +44,9 @@ public class User implements Serializable {
     @JsonSerialize(using = LocalDateToJsonConverter.class)
     @JsonDeserialize(using = LocalDateFromJsonConverter.class)
     private LocalDate birthDay;
+
+    @Transient
+    private String photo;
 
     public Long getId() {
         return id;
@@ -92,6 +96,18 @@ public class User implements Serializable {
         this.birthDay = birthDay;
     }
 
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public String getLogin(){
+        return firstName + lastName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -114,5 +130,4 @@ public class User implements Serializable {
                 ", job='" + job + '\'' +
                 '}';
     }
-
 }
